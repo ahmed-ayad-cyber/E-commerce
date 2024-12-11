@@ -1,9 +1,8 @@
 import  express  from "express";
 import dbConnection from "./src/config/database";
-import categoriesServes from "./src/categories/categories.serves";
 import categoriesRouter from "./src/categories/categories.route";
 import dotenv from 'dotenv';
-import mountRoutes from ;
+import mountRoutes from"./src";
 
 const app:express.Application = express()
 app.use(express.json({limit:"10kb"}))

@@ -5,10 +5,10 @@ import asyncHandler from 'express-async-handler';
 
 class CategoriesServes {
 
-    async getAll (req:Request,res:Response, next:NextFunction):Promise<void> {
+    getAll =asyncHandler(async (req:Request,res:Response, next:NextFunction)=> {
         const categories:Categories[] = await categoriesSchema.find();
         res.status(200).json({data: categories})
-    }
+    })
 
     createOne = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
         const category: Categories = await categoriesSchema.create(req.body);
